@@ -1,8 +1,26 @@
-function sigmoid(result)
+#Activation functions start:
+
+function ReLuLeaky(result)		#Leaky Rectified Linear Unit implementation
+	for i in(1:length(result))
+		if(result[i])<0)
+			result[i]=0.01*result[i];
+		end
+	end
+end
+
+function tanh(result)       #tanh implementation
+  for i in (1:length(result))
+    result[i]=((e^result[i]-(1/e^result[i]))/(e^result[i]+(1/e^result[i])))
+  end
+end
+
+function sigmoid(result)    #sigmoid implementation
   for i in (1:length(result))
     result[i]=(1/(1+(e^result[i])))
   end
 end
+
+#Activation functions end
 
 function compute(input,theta)
   a=[]
